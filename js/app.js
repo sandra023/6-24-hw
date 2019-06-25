@@ -226,16 +226,14 @@ const makeCleanNumString = () => {
 	let buffer = "";
 	let bufferTwo = "";
 	let grossCleanArray =[];
-	let garbageArray = [];
 	let sum = 0;
 	for (let key in bondFilms){
 		grossString += (bondFilms[key]["gross"]);
 		grossString += " ";
 	} 
-	for (let i = 0; i <grossString.length; i++){
-		 if (grossString[i] === "$" || grossString[i] === ","){
-		 	garbageArray.push(grossString[i])
-		 } else { buffer += grossString[i];
+		for (let i = 0; i <grossString.length; i++){
+		 if (grossString[i] !== "$" && grossString[i] !== ","){
+		 	 buffer += grossString[i];
 	}
 	}	for (let i = 0; i < buffer.length; i++){
 		bufferTwo += buffer[i];
